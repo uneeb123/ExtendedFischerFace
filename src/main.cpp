@@ -7,6 +7,7 @@
 #include <string>
 
 void apply_Low(cv::Mat& input,double sigma);
+void apply_High(cv::Mat& input,double sigma);
 
 int main()
 {
@@ -24,5 +25,6 @@ int main()
     std::cout<<"Before low\n";
 
     apply_Low(m,20.0);
+    apply_High(m,20.0);
     return 0;
 }

@@ -47,7 +47,6 @@ void gaussian (cv::Mat& kernel, double sigma)
 
     k2 = static_cast<double>(-(m-1) / 2);
 
-    std::cout << k2 << " " << -(m-1) / 2<<" " << m <<" " << kernel.rows<< "\n";
 
     for(i=0; i < m; ++i)
     {
@@ -56,8 +55,6 @@ void gaussian (cv::Mat& kernel, double sigma)
         {
 
             kernel.at<double>(i,j) = exp( - (k1 * k1 + k2 * k2) / (2 * sigma * sigma));
-
-            //std::cout << i << " " << j << " " << k2 << " " << k1 << " " <<kernel.at<double> (i,j) << std::endl;
 
             sum = sum + kernel.at<double>(i,j);
             k1 = k1 + 1.0;
@@ -120,11 +117,10 @@ void apply_Low(cv::Mat& input,double sigma)
 
     int i,j;
     cv::Mat gaus(input.rows,input.cols,CV_64F),input_fft,result(input.rows,input.cols,CV_64F),output;
-    std::cout<<"Before gaus\n";
 
     gaussian(gaus,sigma);
 
-    std::cout<<"Before shift\n";
+
 
     shift(gaus);
 
@@ -142,12 +138,10 @@ void apply_Low(cv::Mat& input,double sigma)
 
     ofs.close();
 
-    std::cout<<"dft\n";
     cv::dft(input,input_fft);
 
 
 
-    std::cout<<"Before for\n";
 
     for(i = 0; i < input_fft.rows; ++i)
         for(j = 0; j < input_fft.cols; ++j)
@@ -156,9 +150,46 @@ void apply_Low(cv::Mat& input,double sigma)
     cv::dft(result,output,cv::DFT_INVERSE|cv::DFT_REAL_OUTPUT);
     cv::normalize(output, output, 0, 1, CV_MINMAX);
 
-    std::cout<<"Before save\n";
 
     save_double_gray_img("image.jpg",output);
+
+
+}
+
+
+void apply_High(cv::Mat& input,double sigma)
+{
+
+    int i,j;
+    double maximum,minimum;
+    cv::Point minLoc,maxLoc;
+
+    cv::Mat gaus(input.rows,input.cols,CV_64F),input_fft,result(input.rows,input.cols,CV_64F),output;
+
+
+    gaussian(gaus,sigma);
+
+    cv::minMaxLoc(gaus, &minimum, &maximum, &minLoc, &maxLoc );
+
+    cv::Mat High_Filter = (gaus - maximum) * (-1.0);
+
+
+    shift(High_Filter);
+
+    cv::dft(input,input_fft);
+
+
+
+
+    for(i = 0; i < input_fft.rows; ++i)
+        for(j = 0; j < input_fft.cols; ++j)
+            result.at<double>(i,j) = High_Filter.at<double>(i,j) * input_fft.at<double>(i,j);
+
+    cv::dft(result,output,cv::DFT_INVERSE|cv::DFT_REAL_OUTPUT);
+    cv::normalize(output, output, 0, 1, CV_MINMAX);
+
+
+    save_double_gray_img("image_high.jpg",output);
 
 
 }
