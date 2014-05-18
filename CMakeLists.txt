@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project( svd_image )
+set(OpenCV_DIR ${OpenCV_DIR} /opt/ros/hydro/share/OpenCV/OpenCVConfig.cmake)
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( exe src/filter.cpp src/main.cpp)
+target_link_libraries( exe ${OpenCV_LIBS} )
