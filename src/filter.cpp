@@ -193,3 +193,84 @@ void apply_High(cv::Mat& input,double sigma)
 
 
 }
+
+void rotation_matrix(cv::Mat& output, double alpha, double x, double y, double z)
+{
+    output = cv::Mat::zeros(3, 3, CV_64F);
+    output += cv::Mat::eye(3, 3, CV_64F) * cos(alpha);
+
+
+    std::cout<<"Before AX\n";
+
+
+
+
+
+    cv::Mat aX = cv::Mat::zeros(3, 3, CV_64F);
+    aX.at<double>(0,1) = -z;
+    aX.at<double>(0,2) = y;
+    aX.at<double>(1,0) = z;
+    aX.at<double>(1,2) = -x;
+    aX.at<double>(2,0) = -y;
+    aX.at<double>(2,1) = x;
+
+    output += (aX * sin(alpha));
+
+    std::cout<<"After AX\n";
+
+    cv::Mat aS = cv::Mat::zeros(3, 1, CV_64F);
+    aS.at<double>(0,0) = x;
+    aS.at<double>(1,0) = y;
+    aS.at<double>(2,0) = z;
+
+    std::cout<<"Before ass\n";
+
+    cv::Mat aSS = aS * aS.t();
+
+    output += (aSS * (1-cos(alpha)));
+
+
+
+
+
+}
+
+
+void apply_transformation(std::string name_result,cv::Mat& input, cv::Mat& output,cv::Mat& homography)
+{
+    int i,j,x,y;
+    double new_i,new_j;
+    cv::Mat coord_a = cv::Mat::zeros(3, 1, CV_64F);
+    cv::Mat coord_b = cv::Mat::zeros(3, 1, CV_64F);
+    cv::Mat result = cv::Mat::zeros(input.rows, input.cols, CV_32F);
+    coord_a.at<double>(2,0) = 1.0;
+
+    for(i=0;i<input.rows;++i)
+    {
+        new_i = i;
+        coord_a.at<double>(0,0) = new_i;
+        for(j=0;j<input.cols;++j)
+        {
+            new_j = j;
+            coord_a.at<double>(1,0) = new_j;
+            coord_b = homography * coord_a;
+            x = floor(coord_b.at<double>(0,0)/coord_b.at<double>(2,0));
+            y = floor(coord_b.at<double>(1,0)/coord_b.at<double>(2,0));
+
+            if(x >= 0 && x<input.rows && y >= 0 && y<input.cols)
+            {
+                result.at<float>(x,y) = input.at<float>(x,y);
+
+            }
+
+
+        }
+
+    }
+
+    output = result;
+
+    save_double_gray_img(name_result,result);
+
+
+}
