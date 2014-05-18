@@ -46,11 +46,14 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface
+CMAKE_SOURCE_DIR = /home/ace/Git/ExtendedFischerFace/fisherface
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface
+CMAKE_BINARY_DIR = /home/ace/Git/ExtendedFischerFace/fisherface
 
 #=============================================================================
 # Target rules for target CMakeFiles/fisherfaces.dir
@@ -59,7 +62,7 @@ CMAKE_BINARY_DIR = /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherf
 CMakeFiles/fisherfaces.dir/all:
 	$(MAKE) -f CMakeFiles/fisherfaces.dir/build.make CMakeFiles/fisherfaces.dir/depend
 	$(MAKE) -f CMakeFiles/fisherfaces.dir/build.make CMakeFiles/fisherfaces.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ace/Git/ExtendedFischerFace/fisherface/CMakeFiles  1
 	@echo "Built target fisherfaces"
 .PHONY : CMakeFiles/fisherfaces.dir/all
 
@@ -69,9 +72,9 @@ all: CMakeFiles/fisherfaces.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/fisherfaces.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ace/Git/ExtendedFischerFace/fisherface/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/fisherfaces.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ace/Git/ExtendedFischerFace/fisherface/CMakeFiles 0
 .PHONY : CMakeFiles/fisherfaces.dir/rule
 
 # Convenience name for target.

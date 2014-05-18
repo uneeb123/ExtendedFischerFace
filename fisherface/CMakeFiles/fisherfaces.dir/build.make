@@ -34,11 +34,14 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface
+CMAKE_SOURCE_DIR = /home/ace/Git/ExtendedFischerFace/fisherface
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface
+CMAKE_BINARY_DIR = /home/ace/Git/ExtendedFischerFace/fisherface
 
 # Include any dependencies generated for this target.
 include CMakeFiles/fisherfaces.dir/depend.make
@@ -51,17 +54,17 @@ include CMakeFiles/fisherfaces.dir/flags.make
 
 CMakeFiles/fisherfaces.dir/fisherfaces.cpp.o: CMakeFiles/fisherfaces.dir/flags.make
 CMakeFiles/fisherfaces.dir/fisherfaces.cpp.o: fisherfaces.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ace/Git/ExtendedFischerFace/fisherface/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/fisherfaces.dir/fisherfaces.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/fisherfaces.dir/fisherfaces.cpp.o -c /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface/fisherfaces.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/fisherfaces.dir/fisherfaces.cpp.o -c /home/ace/Git/ExtendedFischerFace/fisherface/fisherfaces.cpp
 
 CMakeFiles/fisherfaces.dir/fisherfaces.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fisherfaces.dir/fisherfaces.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface/fisherfaces.cpp > CMakeFiles/fisherfaces.dir/fisherfaces.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ace/Git/ExtendedFischerFace/fisherface/fisherfaces.cpp > CMakeFiles/fisherfaces.dir/fisherfaces.cpp.i
 
 CMakeFiles/fisherfaces.dir/fisherfaces.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fisherfaces.dir/fisherfaces.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface/fisherfaces.cpp -o CMakeFiles/fisherfaces.dir/fisherfaces.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ace/Git/ExtendedFischerFace/fisherface/fisherfaces.cpp -o CMakeFiles/fisherfaces.dir/fisherfaces.cpp.s
 
 CMakeFiles/fisherfaces.dir/fisherfaces.cpp.o.requires:
 .PHONY : CMakeFiles/fisherfaces.dir/fisherfaces.cpp.o.requires
@@ -81,45 +84,39 @@ fisherfaces_EXTERNAL_OBJECTS =
 
 fisherfaces: CMakeFiles/fisherfaces.dir/fisherfaces.cpp.o
 fisherfaces: CMakeFiles/fisherfaces.dir/build.make
-fisherfaces: /usr/local/lib/libopencv_videostab.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_video.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_ts.a
-fisherfaces: /usr/local/lib/libopencv_superres.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_stitching.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_photo.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_ocl.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_objdetect.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_nonfree.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_ml.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_legacy.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_imgproc.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_highgui.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_gpu.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_flann.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_features2d.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_core.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_contrib.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_calib3d.so.2.4.9
-fisherfaces: /usr/lib/i386-linux-gnu/libGLU.so
-fisherfaces: /usr/lib/i386-linux-gnu/libGL.so
-fisherfaces: /usr/lib/i386-linux-gnu/libSM.so
-fisherfaces: /usr/lib/i386-linux-gnu/libICE.so
-fisherfaces: /usr/lib/i386-linux-gnu/libX11.so
-fisherfaces: /usr/lib/i386-linux-gnu/libXext.so
-fisherfaces: /usr/local/lib/libopencv_nonfree.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_ocl.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_gpu.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_photo.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_objdetect.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_legacy.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_video.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_ml.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_calib3d.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_features2d.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_highgui.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_imgproc.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_flann.so.2.4.9
-fisherfaces: /usr/local/lib/libopencv_core.so.2.4.9
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_videostab.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_video.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_ts.a
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_superres.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_stitching.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_photo.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_ocl.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_objdetect.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_nonfree.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_ml.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_legacy.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_imgproc.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_highgui.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_gpu.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_flann.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_features2d.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_core.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_contrib.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_calib3d.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_nonfree.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_ocl.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_gpu.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_photo.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_objdetect.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_legacy.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_video.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_ml.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_calib3d.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_features2d.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_highgui.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_imgproc.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_flann.so.2.4.8
+fisherfaces: /home/ace/Downloads/opencv/opencv-2.4.8/lib/libopencv_core.so.2.4.8
 fisherfaces: CMakeFiles/fisherfaces.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable fisherfaces"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fisherfaces.dir/link.txt --verbose=$(VERBOSE)
@@ -136,6 +133,6 @@ CMakeFiles/fisherfaces.dir/clean:
 .PHONY : CMakeFiles/fisherfaces.dir/clean
 
 CMakeFiles/fisherfaces.dir/depend:
-	cd /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface /home/uneeb123/Desktop/MV/project/ExtendedFischerFace/fisherface/CMakeFiles/fisherfaces.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ace/Git/ExtendedFischerFace/fisherface && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ace/Git/ExtendedFischerFace/fisherface /home/ace/Git/ExtendedFischerFace/fisherface /home/ace/Git/ExtendedFischerFace/fisherface /home/ace/Git/ExtendedFischerFace/fisherface /home/ace/Git/ExtendedFischerFace/fisherface/CMakeFiles/fisherfaces.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/fisherfaces.dir/depend
 
